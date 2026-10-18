@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="CrimeMapsUK">
+  <!--
+    England and Wales built from the site's hex map cells.
+    Generated from a simplified coastline polygon.
+    Palette from site.css: header black #0b0c0c, link blue #1d70b8 (London).
+  -->
+  <rect width="512" height="512" fill="#ffffff"/>
+  <defs>
+    <path id="cell" d="M16.3 0.0 8.1 14.1 -8.1 14.1 -16.3 0.0 -8.1 -14.1 8.1 -14.1Z"/>
+  </defs>
+  <g fill="#0b0c0c">
+    <use href="#cell" x="115.7" y="432.3"/>
+    <use href="#cell" x="141.2" y="329.5"/>
+    <use href="#cell" x="141.2" y="417.6"/>
+    <use href="#cell" x="166.6" y="226.6"/>
+    <use href="#cell" x="166.6" y="256.0"/>
+    <use href="#cell" x="166.6" y="285.4"/>
+    <use href="#cell" x="166.6" y="314.8"/>
+    <use href="#cell" x="166.6" y="344.2"/>
+    <use href="#cell" x="166.6" y="373.6"/>
+    <use href="#cell" x="166.6" y="402.9"/>
+    <use href="#cell" x="166.6" y="432.3"/>
+    <use href="#cell" x="192.1" y="153.1"/>
+    <use href="#cell" x="192.1" y="241.3"/>
+    <use href="#cell" x="192.1" y="270.7"/>
+    <use href="#cell" x="192.1" y="300.1"/>
+    <use href="#cell" x="192.1" y="329.5"/>
+    <use href="#cell" x="192.1" y="358.9"/>
+    <use href="#cell" x="192.1" y="388.3"/>
+    <use href="#cell" x="192.1" y="417.6"/>
+    <use href="#cell" x="217.5" y="109.1"/>
+    <use href="#cell" x="217.5" y="138.4"/>
+    <use href="#cell" x="217.5" y="167.8"/>
+    <use href="#cell" x="217.5" y="197.2"/>
+    <use href="#cell" x="217.5" y="226.6"/>
+    <use href="#cell" x="217.5" y="256.0"/>
+    <use href="#cell" x="217.5" y="285.4"/>
+    <use href="#cell" x="217.5" y="314.8"/>
+    <use href="#cell" x="217.5" y="344.2"/>
+    <use href="#cell" x="217.5" y="373.6"/>
+    <use href="#cell" x="217.5" y="402.9"/>
+    <use href="#cell" x="243.0" y="94.4"/>
+    <use href="#cell" x="243.0" y="123.7"/>
+    <use href="#cell" x="243.0" y="153.1"/>
+    <use href="#cell" x="243.0" y="182.5"/>
+    <use href="#cell" x="243.0" y="211.9"/>
+    <use href="#cell" x="243.0" y="241.3"/>
+    <use href="#cell" x="243.0" y="270.7"/>
+    <use href="#cell" x="243.0" y="300.1"/>
+    <use href="#cell" x="243.0" y="329.5"/>
+    <use href="#cell" x="243.0" y="358.9"/>
+    <use href="#cell" x="243.0" y="388.3"/>
+    <use href="#cell" x="268.4" y="79.7"/>
+    <use href="#cell" x="268.4" y="109.1"/>
+    <use href="#cell" x="268.4" y="138.4"/>
+    <use href="#cell" x="268.4" y="167.8"/>
+    <use href="#cell" x="268.4" y="197.2"/>
+    <use href="#cell" x="268.4" y="226.6"/>
+    <use href="#cell" x="268.4" y="256.0"/>
+    <use href="#cell" x="268.4" y="285.4"/>
+    <use href="#cell" x="268.4" y="314.8"/>
+    <use href="#cell" x="268.4" y="344.2"/>
+    <use href="#cell" x="268.4" y="373.6"/>
+    <use href="#cell" x="268.4" y="402.9"/>
+    <use href="#cell" x="293.9" y="153.1"/>
+    <use href="#cell" x="293.9" y="182.5"/>
+    <use href="#cell" x="293.9" y="211.9"/>
+    <use href="#cell" x="293.9" y="241.3"/>
+    <use href="#cell" x="293.9" y="270.7"/>
+    <use href="#cell" x="293.9" y="300.1"/>
+    <use href="#cell" x="293.9" y="329.5"/>
+    <use href="#cell" x="293.9" y="358.9"/>
+    <use href="#cell" x="293.9" y="388.3"/>
+    <use href="#cell" x="319.3" y="167.8"/>
+    <use href="#cell" x="319.3" y="197.2"/>
+    <use href="#cell" x="319.3" y="226.6"/>
+    <use href="#cell" x="319.3" y="256.0"/>
+    <use href="#cell" x="319.3" y="285.4"/>
+    <use href="#cell" x="319.3" y="314.8"/>
+    <use href="#cell" x="319.3" y="373.6"/>
+    <use href="#cell" x="319.3" y="402.9"/>
+    <use href="#cell" x="344.8" y="211.9"/>
+    <use href="#cell" x="344.8" y="241.3"/>
+    <use href="#cell" x="344.8" y="270.7"/>
+    <use href="#cell" x="344.8" y="300.1"/>
+    <use href="#cell" x="344.8" y="329.5"/>
+    <use href="#cell" x="344.8" y="358.9"/>
+    <use href="#cell" x="344.8" y="388.3"/>
+    <use href="#cell" x="370.2" y="256.0"/>
+    <use href="#cell" x="370.2" y="285.4"/>
+    <use href="#cell" x="370.2" y="314.8"/>
+    <use href="#cell" x="370.2" y="373.6"/>
+    <use href="#cell" x="395.7" y="270.7"/>
+    <use href="#cell" x="395.7" y="300.1"/>
+  </g>
+  <!-- London -->
+  <use href="#cell" x="319.3" y="344.2" fill="#1d70b8"/>
+</svg>

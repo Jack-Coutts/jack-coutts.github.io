@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jack Coutts · Software Engineer &amp; Bioinformatician</title>
+<meta name="description" content="Jack Coutts, software engineer and bioinformatician at the Francis Crick Institute in London.">
+<meta property="og:title" content="Jack Coutts">
+<meta property="og:description" content="Software engineer and bioinformatician at the Francis Crick Institute in London.">
+<link rel="preload" href="fonts/Libron-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="progress" aria-hidden="true"></div>
+<main>
+  <header>
+    <h1>Jack Coutts</h1>
+    <p class="role">Software engineer and bioinformatician at the Francis Crick Institute in London.</p>
+    <h2>About</h2>
+    <p class="intro">A software engineer and bioinformatician working for two <a href="https://www.crick.ac.uk/research/platforms-and-facilities">science technology platforms</a> at <a href="https://www.crick.ac.uk/">The Francis Crick Institute</a> in London.</p>
+    <p class="intro">I like working on scientific systems or supporting systems that make science easier, more reproducible, faster, or more accurate. Coming from a biological background, I enjoy problems where understanding the underlying biology is important but where a big impact can be made with better software or computational solutions.</p>
+    <p class="intro">I have a wide range of experience, having worked on cross-platform desktop applications, web applications, data processing pipelines, iOS apps, long-running jobs on HPC clusters, and Linux servers for hosting applications.</p>
+    <p class="intro">I like working on problems with tight constraints, like limited RAM or strict speed requirements. I find these push you towards more interesting solutions and give you more freedom to experiment. Optimisation is another of my favourites, both at the architecture level and in lower-level changes. The fast feedback loop and measurable results can make it almost game-like.</p>
+    <p class="intro">In data analysis, much of my focus is on scientific correctness and minimisation of errors. That includes the misuse of statistical significance, data leakage from batch correction and imputation, and how results are interpreted.</p>
+    <p class="intro">Over the last year, I've been enjoying the transition to working with agentic AI. I've curated skills, built workflows to benchmark agents and run automated adversarial reviews in which agents use the apps themselves to check that changes work, and found ways to increase my output responsibly.</p>
+    <p class="intro">In my free time, I like to make things that solve problems and experiment with things I haven't done before. I've created iOS apps for myself and my friends, I've recently been setting up my own home server, and I built <a href="https://crimemapsuk.com">CrimeMapsUK</a>, a web app for the public to explore the full UK policing dataset (updated monthly).</p>
+    <ul class="contact">
+      <li><a href="mailto:jackwgcoutts@proton.me">Email</a></li>
+      <li><a href="https://github.com/Jack-Coutts">GitHub</a></li>
+      <li><a href="https://www.linkedin.com/in/jackcoutts/">LinkedIn</a></li>
+      <!-- <li><a href="cv.pdf">CV</a></li> -->
+    </ul>
+  </header>
+
+  <nav class="spectrum" aria-label="Contents">
+    <svg viewBox="0 0 640 64" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1"/></svg>
+    <a href="#lims" data-from="2022-10-19" data-to="2026-10-08">Proteomics and metabolomics LIMS</a>
+    <a href="#manic" data-from="2023-07-04" data-to="2026-09-11">MANIC</a>
+    <a href="#pipeline" data-from="2025-08-01" data-to="2026-10-15">Metabolomics analysis pipeline</a>
+    <a href="#tools" data-from="2023-08-01" data-to="2026-08-19">Statistics and research tools</a>
+    <a href="#crimemapsuk" data-from="2026-03-04" data-to="2026-09-23">CrimeMapsUK</a>
+    <a href="#onboarding-agent" data-from="2026-10-03" data-to="2026-10-04">Study onboarding agent</a>
+    <a href="#coevolution" data-from="2026-09-24" data-to="2026-09-27">Coevolution</a>
+    <a href="#boast" data-from="2026-10-05" data-to="2026-10-12">boast</a>
+    <a href="#log" data-from="2026-01-06" data-to="2026-10-17">log</a>
+    <a href="#homeserver" data-from="2026-10-11" data-to="2026-10-17">Homeserver</a>
+  </nav>
+  <p class="legend">Each peak is a project on this page, in the order they appear. The taller the peak, the longer I've worked on it. Click a name to jump to it.</p>
+
+  <section>
+    <h2>Work</h2>
+    <article id="lims">
+      <h3>Proteomics and metabolomics LIMS <span class="status" data-status="Live">Live</span></h3>
+      <p class="meta"><span>Django, htmx, MySQL, Docker, Power BI</span><span>2022-now</span></p>
+      <ul>
+      <li>Sole developer on both systems, with pull requests reviewed by the institute's Software Engineering &amp; AI team. Joined the metabolomics LIMS project in 2022 as one of its core developers and built the proteomics LIMS from scratch in 2023.</li>
+      <li>Two separate laboratory information management systems (LIMS) that every project on each platform runs through, from sample submission to completion.</li>
+      <li>Around 2,000 projects through each since launch, with about 5,000 earlier projects each still stored and accessible.</li>
+      <li>The proteomics LIMS tracks seven stages, emailing the lab at each step and recording instrument and staff time.</li>
+      <li>Run in production on internal Crick servers, used daily by ~25 platform staff, with restricted access for anyone who works with the platforms.</li>
+      <li>Work directly with lab staff to decide what to build, and ship changes based on their feedback.</li>
+      <li>Built chunked uploads of instrument data folders straight to network storage, handling hundreds of GB at once.</li>
+      <li>Integrated with the Workday HR system and Okta SSO, with an API finance uses to recharge completed work.</li>
+      <li>Built Power BI dashboards that pull from the databases and show usage stats to the heads of the platforms.</li>
+      <li>Designed the schemas for both systems with colleagues, and migrated all data into them from the old systems, which were slow, poorly integrated and broke often.</li>
+      <li>Write the container images. Deployed with Argo CD through a GitOps pipeline the infrastructure team set up with my help.</li>
+      <li>Used as the template for all new Django apps built at the Crick.</li>
+      </ul>
+    </article>
+
+    <article id="manic">
+      <h3><img class="icon" src="icons/manic.webp" alt="" height="28">MANIC <span class="status" data-status="Live">Live</span></h3>
+      <p class="meta"><span>Python, PySide6, NumPy, SciPy, SQLite</span><span>2023-now</span></p>
+      <ul>
+      <li>Python rewrite of MATLAB software for GC-MS isotope-tracing experiments: it reads raw instrument files, extracts a chromatogram for each target metabolite, corrects for natural isotope abundance and calculates calibrated amounts.</li>
+      <li>Sole developer since the rewrite began in 2024. I've maintained the MATLAB version, which had become slow and hard to extend, since 2023.</li>
+      <li>Work alongside the scientists on the platform to decide what to build and fix next, and improvements are tested before release. Other labs send bugs and requests through GitHub issue forms.</li>
+      <li>Used for all GC-MS work on the platform, cutting a typical analysis from around two weeks to a couple of hours. It's open source and also used by other labs at the Crick, Imperial College London and elsewhere around the world. A paper describing it is in preparation.</li>
+      <li>Added chromatographic peak deconvolution, which fits peak shapes to separate overlapping signals, and an unlabelled mode that checks each compound's identity using qualifier ions, retention time and ion ratios.</li>
+      <li>Added manual peak review: reviewers accept or reject peaks from the plot grid, and every export records the MANIC version, settings and reviews behind it, so results can be traced back.</li>
+      <li>Moved the data out of memory into a local SQLite database, with a schema that stores raw and corrected chromatograms separately and indexes them by compound and sample, so large datasets run on ordinary lab PCs.</li>
+      <li>Pages now usually render in about 0.2 seconds, against up to 15 seconds in the MATLAB version: chromatograms and isotope corrections are calculated once at import and stored, plotting is vectorised, and deconvolution fits are cached.</li>
+      <li>Built a benchmark suite on synthetic GC-MS data with planted hard cases, which times every change and checks its peak areas against the previous version. It lets me hand optimisation work to AI coding agents and reject what they get wrong.</li>
+      <li>411 tests cover the maths, data import and interface logic, and GitHub Actions builds the Windows and macOS installers for each release.</li>
+      </ul>
+      <p class="links"><a href="https://github.com/FrancisCrickInstitute/pMANIC">GitHub</a><a href="https://github.com/FrancisCrickInstitute/pMANIC/releases">Releases</a></p>
+    </article>
+
+    <article id="pipeline">
+      <h3>Metabolomics analysis pipeline <span class="status" data-status="Live">Live</span></h3>
+      <p class="meta"><span>Python, R, limma, scikit-learn, Streamlit</span><span>2025-now</span></p>
+      <ul>
+      <li>A Python and R package for metabolomics studies, taking raw instrument exports through to differential abundance and predictive models. It grew out of a one-off analysis for another project in 2025, and I'm its sole developer.</li>
+      <li>Standardised the metabolomics platform's data analysis, for clinical and research studies with drift correction, QC filtering and leak-free validation built in. A new study needs a layout file and a config, not new code.</li>
+      <li>Used so far to analyse three large clinical cohort studies with manuscripts in progress and currently being benchmarked on public studies.</li>
+      <li>Every pull request gets an automated AI review on a self-hosted runner which builds the environment, runs the tests, uses the GUI in a browser to check changes end to end, and follows skills curated for reviewing scientific code.</li>
+      <li>643 tests, all on synthetic or public data, so no patient data enters the repository.</li>
+      <li>Every scientific choice has a decision page citing its evidence, a checker confirms each citation still matches, and each run records its config, input hashes, git commit and R and limma versions.</li>
+      <li>AI agents working in the repository must follow the decision pages and pass the checker, so their changes can't quietly alter the science.</li>
+      <li>Imports raw XLSX or CSV exports into one validated dataset format, then corrects instrument drift against QC samples, filters imprecise features and checks each batch's design before any analysis runs.</li>
+      <li>Runs limma differential abundance alongside logistic regression, PLS-DA, random forest, and supports XGBoost and MLP models. Held-out scores come with 95% intervals and an optional permutation test.</li>
+      <li>Imputation, scaling and tuning are fitted inside subject-grouped training folds only, so held-out scores stay honest. A simulation in the docs shows why, with leaky feature selection scoring an AUC of 0.98 on pure noise against 0.50 done properly.</li>
+      <li>A local browser GUI walks scientists through import, design check, run and results.</li>
+      </ul>
+    </article>
+
+    <article id="tools">
+      <h3>Statistics and research tools <span class="status" data-status="Live">Live</span></h3>
+      <p class="meta"><span>Python, R</span><span>2023-now</span></p>
+      <ul>
+      <li>Advise researchers on both platforms on experimental design, method choice and whether their results support their claims, including redesigning a study's sample layout to avoid a batch confound.</li>
+      <li>Turn recurring analyses into tools the labs run themselves, such as absolute lipid quantification, thermal proteome profiling melt curves and correlation heatmaps, with desktop builds for people who don't use the command line.</li>
+      <li>Small utilities for day-to-day platform work, such as randomising mass spec run order around fixed blanks and QCs, compressing instrument data, finding duplicate FASTA sequences and generating PRIDE submission checksums.</li>
+      <li>Explain new methods in journal clubs and lab meetings, including talks on data leakage and the misuse of p-values.</li>
+      </ul>
+      <p class="links"><a href="https://github.com/Jack-Coutts/targeted_lipid_panel_calculator">Lipid calculator</a><a href="https://github.com/Jack-Coutts/tpp_melt_curve_plotter">TPP melt curves</a><a href="https://github.com/Jack-Coutts/data_leakage_demo">Leakage demo</a><a href="https://github.com/Jack-Coutts/pride_checksum">PRIDE checksum</a></p>
+    </article>
+  </section>
+
+  <section>
+    <h2>Personal projects</h2>
+    <article id="crimemapsuk">
+      <h3><img class="icon" src="icons/crimemapsuk.svg" alt="" height="28">CrimeMapsUK <span class="status" data-status="Live">Live</span></h3>
+      <p class="meta"><span>Django, PostGIS, Celery, Redis, Stripe, JavaScript</span><span>2026-now</span></p>
+      <ul>
+      <li>A site I built and run on my own: free maps, dashboards and pages for police force areas and 1,398 postcode districts in England and Wales, built from around 70 million published UK police records.</li>
+      <li>Started to see what I could do with the data: friends moving house couldn't get a clear picture of local crime, and police data is public but hard to interpret on its own.</li>
+      <li>Over 3,000 visitors and 6,000 page views since analytics began in July 2026, currently around 800 visitors a month.</li>
+      <li>Crime map tiles are served straight from PostGIS as vector tiles over pre-aggregated hexagon summaries, so there's no separate tile server.</li>
+      <li>New police data is ingested twice a month on a timer: each month is replaced cleanly, the summaries are rebuilt, and every run is logged.</li>
+      <li>Paid PDF reports for a postcode, from £9.99 through Stripe checkout and generated in the background.</li>
+      <li>The reports are built for accuracy: they state the exact area and date range, compare it with the police force area and the national pattern, use aggregated maps rather than exact-looking pins, explain the data's limits (approximate locations, published outcomes only, reporting gaps) and show no per-resident rate without an official population figure.</li>
+      <li>One Hetzner server runs Nginx, Gunicorn, PostGIS, Redis and Celery, with Tailscale for admin access and automatic deploys when I push to GitHub.</li>
+      <li>Server-rendered Django with vanilla JavaScript and no build step, with 378 Django tests and 44 deployment tests.</li>
+      </ul>
+      <p class="links"><a href="https://crimemapsuk.com">crimemapsuk.com</a></p>
+    </article>
+
+    <article id="onboarding-agent">
+      <h3>Study onboarding agent <span class="status" data-status="In development">In development</span></h3>
+      <p class="meta"><span>Python, Docker</span><span>2026</span></p>
+      <ul>
+      <li>A test harness for whether an AI coding agent can safely write the converters that bring new public metabolomics studies into an analysis pipeline.</li>
+      <li>Built around the mistakes that fail silently: a sample ID <code>01</code> read as <code>1</code>, a missing value written as below the detection limit, a batch column filled in when the study recorded none.</li>
+      <li>Each attempt runs in a sandbox with no network and is judged by checks the agent never sees, including a prompt-injection case.</li>
+      <li>Each run records everything needed to reproduce its result without calling the model again.</li>
+      <li>In the first evaluation, six runs across three public studies, every converter matched the reference on every cell, and the agent's own tests caught 32 of 48 planted bugs.</li>
+      </ul>
+      <p class="links"><a href="https://github.com/Jack-Coutts/study-onboarding-agent">GitHub</a></p>
+    </article>
+
+    <article id="coevolution">
+      <h3><img class="icon" src="icons/coevolution.svg" alt="" height="28">Coevolution <span class="status" data-status="Live">Live</span></h3>
+      <p class="meta"><span>TypeScript</span><span>2026</span></p>
+      <ul>
+      <li>A browser game about evolution: rabbits and foxes pass their behaviour on to their offspring, and you have a few interventions to keep the meadow alive for a year.</li>
+      <li>Built because I like genetic algorithms, and I use it as a benchmark for testing what new LLMs can build.</li>
+      </ul>
+      <p class="links"><a href="https://jack-coutts.github.io/coevolution_game/">Play</a><a href="https://github.com/Jack-Coutts/coevolution_game">GitHub</a></p>
+    </article>
+
+    <article id="boast">
+      <h3><img class="icon" src="icons/boast.webp" alt="" height="28">boast <span class="status" data-status="In development">In development</span></h3>
+      <p class="meta"><span>TypeScript, React Native</span><span>2026</span></p>
+      <ul>
+      <li>A private squash notebook for iPhone: log a match in seconds, keep a game plan for every opponent and see your record against them.</li>
+      <li>No account, no ads, and your data stays on your phone. In TestFlight now.</li>
+      </ul>
+      <p class="links"><a href="https://jack-coutts.github.io/boast-site/">Website</a></p>
+    </article>
+
+    <article id="log">
+      <h3><img class="icon" src="icons/log.webp" alt="" height="28">log <span class="status" data-status="In development">In development</span></h3>
+      <p class="meta"><span>TypeScript, React Native, SQLite</span><span>2026</span></p>
+      <ul>
+      <li>A private exercise diary for iPhone, with a heatmap of your year, streaks and stats. Nothing leaves the phone.</li>
+      <li>A port of my single-file web tracker, matched to it rule for rule.</li>
+      <li>Coming soon to the App Store.</li>
+      </ul>
+      <p class="links"><a href="https://jack-coutts.github.io/log-site/">Website</a><a href="https://jack-coutts.github.io/exercise-tracker/">Web tracker</a><a href="https://github.com/Jack-Coutts/exercise-tracker">GitHub</a></p>
+    </article>
+
+    <article id="homeserver">
+      <h3>Homeserver <span class="status" data-status="Live">Live</span></h3>
+      <p class="meta"><span>Ubuntu, Tailscale, systemd, GitHub Actions</span><span>2026</span></p>
+      <ul>
+      <li>A mini PC at home running Ubuntu, reached from anywhere over Tailscale with SSH open to keys only.</li>
+      <li>Runs my AI coding agents around the clock, and a self-hosted GitHub Actions runner that sends each pull request to an AI reviewer, which drives the app itself to check the change works.</li>
+      <li>Syncthing keeps my files in step across devices.</li>
+      <li>Next, I plan to move CrimeMapsUK onto it and self-host more of the services I use.</li>
+      </ul>
+    </article>
+  </section>
+
+  <section>
+    <h2>Experience</h2>
+    <article class="cv">
+      <h3>Software Engineer &amp; Bioinformatician</h3>
+      <p class="meta"><span>The Francis Crick Institute, London</span><span>2022-now</span></p>
+      <p>I'm the sole developer for the Crick's metabolomics and proteomics platforms, the two facilities that run mass spectrometry for research groups across the institute. For my first 12 months I worked alongside a team of developers on the laboratory information management systems (LIMS). Since then I've worked independently, with code review and occasional supervision from the institute's Software Engineering &amp; AI team.</p>
+      <p>The role covers the two LIMS the staff run their work through, the desktop software that turns raw instrument data into results, and the analysis pipelines for their clinical studies. I work out what to build and what to improve with the scientists and technicians who use it, then build it, ship it and keep it running.</p>
+      <p>I'm also the platforms' bioinformatician. I help researchers plan experiments, choose methods and check whether their results support their conclusions. I keep up with new statistical methods in the field and bring in the ones worth adopting. Day to day, it's also a lot of small scripts and one-off analyses for the scientists I work with.</p>
+    </article>
+  </section>
+
+  <section>
+    <h2>Education</h2>
+    <article class="cv">
+      <h3>MSc Bioinformatics</h3>
+      <p class="meta"><span>Queen Mary University of London · Distinction</span><span>2021-2022</span></p>
+      <p>Dissertation was a six month research project at the William Harvey Research Institute on thyroid cancer comorbidity and classification using the <a href="https://www.ukbiobank.ac.uk/">UK Biobank</a> data. Genotypes, phenotypes, and medical record metadata from ~500,000 participants were used for clustering, association rule mining, and supervised machine learning methods on the Apocrita HPC cluster. Achieved a distinction grade of 81%.</p>
+    </article>
+
+    <article class="cv">
+      <h3>BSc Genetics</h3>
+      <p class="meta"><span>University of Sussex · First-class honours</span><span>2016-2021</span></p>
+    </article>
+  </section>
+
+  <section>
+    <h2>Skills</h2>
+    <dl class="skills">
+      <dt>Languages</dt><dd>Python, JavaScript (and some TypeScript), SQL, R, Bash, HTML and CSS</dd>
+      <dt>Web and back end</dt><dd>Django, Django REST Framework, htmx, Celery, Redis, PostgreSQL and PostGIS, MySQL, SQLite</dd>
+      <dt>Apps</dt><dd>PySide6 and Qt, Streamlit</dd>
+      <dt>Data</dt><dd>pandas, NumPy, SciPy, scikit-learn, statsmodels, limma, Power BI</dd>
+      <dt>Science</dt><dd>metabolomics and proteomics, GC-MS and LC-MS data, experimental design, statistical modelling, model validation</dd>
+      <dt>AI tooling</dt><dd>Claude Code, Codex, Cursor, T3 Code, Pi; agentic coding, computer use, agent evaluation, automated AI code review, agent skills and guardrails</dd>
+      <dt>Infrastructure</dt><dd>Docker, Linux servers, Nginx, systemd, Tailscale, GitHub Actions</dd>
+      <dt>Tools</dt><dd>Git, pytest, mypy, ruff, uv</dd>
+    </dl>
+  </section>
+
+</main>
+<script>
+  // Draws the contents chromatogram from its labels. Peaks sit in page order. Each one's height grows with the months
+  // from the label's data-from to its data-to date, counting both, on a log scale so a one-month project still shows.
+  const spectrum = document.querySelector('.spectrum');
+  const labels = [...spectrum.querySelectorAll('a')];
+  const monthIndex = (date) => Number(date.slice(0, 4)) * 12 + Number(date.slice(5, 7));
+  const months = labels.map((a) => monthIndex(a.dataset.to) - monthIndex(a.dataset.from) + 1);
+  const longest = Math.max(...months);
+  const heights = months.map((m) => Math.log1p(m) / Math.log1p(longest));
+  labels.forEach((a, i) => (a.title = `${months[i]} ${months[i] === 1 ? 'month' : 'months'}`));
+  const gauss = (x, mid, width) => Math.exp(-(((x - mid) / width) ** 2) / 2);
+
+  // Spreads the peaks across the trace, then squeezes them left until the last label fits inside it,
+  // and grows the block upwards to fit the longest label.
+  function layout() {
+    spectrum.style.height = '';
+    const edge = () => Math.max(...labels.map((a) => a.getBoundingClientRect().right)) - spectrum.getBoundingClientRect().right;
+    let span = 1;
+    for (let pass = 0; pass < 3; pass++) {
+      labels.forEach((a, i) => a.style.setProperty('--x', ((i + 0.5) / labels.length) * span));
+      const overflow = edge();
+      if (overflow <= 0) break;
+      span -= (overflow + 4) / spectrum.clientWidth;
+    }
+    const above = spectrum.getBoundingClientRect().top - Math.min(...labels.map((a) => a.getBoundingClientRect().top));
+    if (above > 0) spectrum.style.height = `${spectrum.offsetHeight + above}px`;
+    let d = '';
+    for (let x = 0; x <= 640; x += 2) {
+      let y = 0.01 * Math.sin(x / 9) + 0.006 * Math.sin(x / 3.7);
+      labels.forEach((a, i) => {
+        const mid = ((i + 0.5) / labels.length) * span * 640;
+        y += heights[i] * gauss(x, mid, 4.5) + 0.1 * heights[i] * gauss(x, mid + 14, 3.5);
+      });
+      d += `${x ? 'L' : 'M'}${x},${(62 - 58 * y).toFixed(1)} `;
+    }
+    spectrum.querySelector('path').setAttribute('d', d);
+  }
+  spectrum.classList.add('drawn');
+  layout();
+  addEventListener('resize', layout);
+  document.fonts.ready.then(layout);
+
+  // The reading-progress bar along the top edge.
+  const progress = document.querySelector('.progress');
+  const track = () => progress.style.setProperty('--p', scrollY / Math.max(1, document.documentElement.scrollHeight - innerHeight));
+  addEventListener('scroll', track, { passive: true });
+  addEventListener('resize', track);
+  track();
+</script>
+</body>
+</html>

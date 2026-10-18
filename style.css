@@ -1,0 +1,109 @@
+/* Libron by Nico Verbruggen, SIL Open Font License (fonts/OFL.txt). */
+@font-face { font-family: "Libron"; src: url("fonts/Libron-Regular.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Libron"; src: url("fonts/Libron-Italic.woff2") format("woff2"); font-weight: 400; font-style: italic; font-display: swap; }
+@font-face { font-family: "Libron"; src: url("fonts/Libron-Bold.woff2") format("woff2"); font-weight: 700; font-style: normal; font-display: swap; }
+
+:root {
+  color-scheme: light dark;
+  --paper: #fcfcfb;
+  --ink: #1d1b22;
+  --slate: #646a76;
+  --rule: #e4e6ea;
+  --accent: #5b3a9e;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #16181c;
+    --ink: #e6e8ec;
+    --slate: #9aa1ad;
+    --rule: #2a2d33;
+    --accent: #b9a2f2;
+  }
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 18px/1.65 "Libron", Charter, Georgia, serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+a { color: var(--accent); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 0.18em; }
+a:hover { text-decoration-thickness: 2px; }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+::selection { background: color-mix(in srgb, var(--accent) 22%, transparent); }
+
+html { scroll-behavior: smooth; }
+
+/* Reading progress along the top edge; the script at the end of the page sets --p from 0 to 1. */
+.progress { position: fixed; inset: 0 0 auto; height: 3px; z-index: 1; background: var(--accent); transform-origin: 0 50%; transform: scaleX(var(--p, 0)); }
+main { max-width: 640px; margin: 0 auto; padding: 120px 24px 120px; }
+
+h1 { font-size: 46px; line-height: 1.1; font-weight: 700; letter-spacing: -0.015em; margin: 0; }
+.role { font-style: italic; color: var(--slate); margin: 6px 0 0; }
+header h2 { margin-top: 56px; }
+h2 + .intro { margin-top: 20px; }
+.intro { margin: 28px 0 0; }
+.intro + .intro { margin-top: 18px; }
+.contact { display: flex; flex-wrap: wrap; gap: 4px 22px; list-style: none; padding: 0; margin: 24px 0 0; }
+
+/* The contents, drawn as a chromatogram: one labelled peak per entry, like compounds on a real trace.
+   The script at the end of the page places the labels and draws the peaks; without it the block stays hidden.
+   Every label starts at the same height, above the tallest possible peak, so long titles never run into each other. */
+.spectrum:not(.drawn) { display: none; }
+.spectrum { position: relative; height: 160px; margin: 80px 0 0; }
+.spectrum svg { position: absolute; left: 0; bottom: 0; width: 100%; height: 64px; overflow: visible; }
+.spectrum path { fill: none; stroke: var(--accent); stroke-width: 1.25; vector-effect: non-scaling-stroke; stroke-linejoin: round; stroke-dasharray: 1; animation: draw 2.2s cubic-bezier(.45, 0, .25, 1) both; }
+.spectrum a {
+  position: absolute; left: calc(var(--x) * 100%); bottom: 78px;
+  transform-origin: 0 100%; transform: translateX(-4px) rotate(-55deg);
+  font-size: 14px; font-style: italic; line-height: 1; white-space: nowrap; color: var(--slate); text-decoration: none;
+  animation: appear 0.5s ease-out both; animation-delay: calc(0.3s + var(--x) * 1.9s);
+}
+.spectrum a:hover, .spectrum a:focus-visible { color: var(--accent); }
+@keyframes draw { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
+@keyframes appear { from { opacity: 0; } to { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .spectrum path, .spectrum a { animation: none; } }
+
+h2 { font-size: 30px; line-height: 1.2; font-weight: 700; letter-spacing: -0.01em; margin: 96px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--rule); }
+.legend { font-size: 14px; font-style: italic; color: var(--slate); margin: 10px 0 0; }
+.legend + section h2 { margin-top: 64px; }
+
+article { margin-top: 36px; }
+h2 + article { margin-top: 28px; }
+h3 { font-size: 23px; line-height: 1.25; font-weight: 700; margin: 0; }
+.meta { display: flex; justify-content: space-between; gap: 16px; font-size: 16px; color: var(--slate); margin: 2px 0 0; font-variant-numeric: tabular-nums; }
+article p { margin: 10px 0 0; }
+/* Body paragraphs, which have no class, get a clear gap between them; .meta and .links keep the tighter one. */
+article p:not([class]) + p:not([class]) { margin-top: 18px; }
+article .meta { margin-top: 2px; }
+/* Bullet lists sit in the body like a paragraph, with a small indent and a little room between items. */
+article ul { margin: 10px 0 0; padding-left: 20px; }
+article p:not([class]) + ul, article ul + p:not([class]) { margin-top: 18px; }
+article li + li { margin-top: 6px; }
+/* The years never shrink or break at their hyphen; the text on the left wraps instead. */
+.meta span:last-child { flex-shrink: 0; white-space: nowrap; }
+.links { display: flex; flex-wrap: wrap; gap: 4px 20px; font-size: 17px; }
+
+/* Small project icons, and each entry's state (like a sample's status in a LIMS). */
+h3 .icon { height: 28px; width: auto; vertical-align: -5px; margin-right: 10px; border-radius: 7px; }
+.status { font-size: 15px; font-weight: 400; font-style: italic; color: var(--slate); margin-left: 8px; white-space: nowrap; vertical-align: 2px; }
+.status::before { content: ""; display: inline-block; width: 7px; height: 7px; margin-right: 6px; vertical-align: 1px; border-radius: 50%; background: var(--accent); }
+.status[data-status="In development"]::before { background: none; box-shadow: inset 0 0 0 1.5px var(--accent); }
+.status[data-status="Finished"]::before { background: var(--slate); }
+
+.skills { display: grid; grid-template-columns: 160px 1fr; gap: 10px 24px; margin: 20px 0 0; }
+.skills dt { font-style: italic; color: var(--slate); }
+.skills dd { margin: 0; }
+
+@media (max-width: 560px) {
+  .skills { grid-template-columns: 1fr; gap: 0; }
+  .skills dd { margin-bottom: 12px; }
+  .spectrum a { font-size: 12.5px; transform: translateX(-3px) rotate(-64deg); }
+  body { font-size: 17px; }
+  main { padding-top: 72px; }
+  h1 { font-size: 38px; }
+}
